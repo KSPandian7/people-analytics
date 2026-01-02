@@ -1,0 +1,31 @@
+# Virtual environments
+env/
+
+# Dataset
+data/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model artifacts
+*.pth
+*.onnx
+*.bin
+*.xml
+
+# YOLO weights
+yolov8n.pt
+
+# Generated output
+OUTPUT/
+
+# Images (keep curated ones only)
+image*.png
+
+# OS / IDE
+.vscode/
+.DS_Store
