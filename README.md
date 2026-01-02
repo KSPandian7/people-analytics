@@ -1,4 +1,45 @@
-# Pedestrian Attribute Recognition & People Analytics System
+<!-- BADGES -->
+<p align="center">
+  <a href="https://github.com/KSPandian7/people-analytics/stargazers">
+    <img src="https://img.shields.io/github/stars/KSPandian7/people-analytics" alt="Stars"/>
+  </a>
+  <a href="https://github.com/KSPandian7/people-analytics/network/members">
+    <img src="https://img.shields.io/github/forks/KSPandian7/people-analytics" alt="Forks"/>
+  </a>
+  <img src="https://img.shields.io/github/license/KSPandian7/people-analytics" alt="License"/>
+  <img src="https://img.shields.io/badge/Python-3.12-blue" alt="Python"/>
+  <img src="https://img.shields.io/badge/Framework-PyTorch-red" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/Detection-YOLO-green" alt="YOLO"/>
+  <img src="https://img.shields.io/badge/Deployment-OpenVINO-purple" alt="OpenVINO"/>
+</p>
+
+<h1 align="center">Pedestrian Attribute Recognition & People Analytics System</h1>
+
+<p align="center">
+An end-to-end computer vision pipeline for detecting pedestrians and predicting semantic
+attributes in real time using YOLO + ResNet with optimized inference (ONNX + OpenVINO).
+</p>
+
+---
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Objectives](#objectives)
+- [Applications](#applications)
+- [Dataset](#dataset)
+- [System Architecture](#system-architecture-logical-flow)
+- [Model Design](#model-design)
+- [Training Strategy](#training-strategy)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Deployment & Optimization](#deployment--optimization)
+- [Web Application](#web-application-demo)
+- [Results](#results)
+- [Repository Structure](#repository-structure)
+- [Setup & Usage](#setup--usage)
+- [Future Work](#future-work)
+- [License](#license)
+
 
 ## Introduction
 
@@ -21,7 +62,6 @@ The system is designed to be deployment-ready, privacy-aware, and scalable.
 > The main objectives of this project are:
 
 - To design a multi-label pedestrian attribute recognition model
-- To support multi-person analysis using object detection
 - To support multi-person analysis using object detection
 - To present results visually for real-world usability
 
@@ -48,6 +88,13 @@ The system is designed to be deployment-ready, privacy-aware, and scalable.
 - Privacy-preserving people analytics
 
 ## Dataset
+```bash
+
+This project uses the "PETA (Pedestrian Attribute) dataset" for research and
+evaluation purposes.
+
+The PETA dataset is not distributed with this repository and is intended for academic and research use only. Users must download the dataset from the official source and comply with its original license terms.
+```
 
 > "PETA – Pedestrian Attribute Dataset"
 
@@ -167,6 +214,10 @@ The system is suitable for real-world surveillance and retail analytics scenario
 ### STEP-BY-STEP GUIDE (FOR GITHUB USERS)
 
 ```py
+# 0. Start from here
+git clone https://github.com/KSPandian7/people-analytics.git
+cd people-analytics
+
 # 1. Create environment
 python -m venv env
 env\Scripts\activate
@@ -175,27 +226,47 @@ env\Scripts\activate
 pip install torch torchvision ultralytics openvino gradio matplotlib seaborn
 
 # 3. Train model
-python train.py
+python src/train.py
 
 # 4. Evaluate
-python eval.py
+python src/eval.py
 
 # 5. Export model
-python export_onnx.py
-python convert_openvino.py
+python src/export_onnx.py
+python src/convert_openvino.py
 
 # 6. Run demo
-python app.py
+python src/app.py
 
 ```
+### Usage 
 
->KW:
+```py
+python src/app.py
+```
+
+```py
+python src/train.py
+```
+
+```py
+python src/eval.py
+```
+
+```py
+python src/export_onnx.py
+python src/convert_openvino.py
+python src/benchmark_openvino.py
+```
+
+
+#### Kewords:
 Computer Vision, Deep Learning, PyTorch, YOLO, OpenVINO, ONNX,
 Multi-Label Classification, CNN, People Analytics, Model Deployment
 <hr>
 
 ### Sample Output
-![comparison_result.png](image-2.png)
+![comparison_result.png](./results/sample_outputs/comparison_result.png)
 
 The system detects pedestrians and overlays predicted attributes using a confidence-based screening mechanism.
 
@@ -205,7 +276,6 @@ The system detects pedestrians and overlays predicted attributes using a confide
 
 Note: Predictions are appearance-based and dataset-driven.
 
-## Sample Output Comparison
 
 <h2>Sample Output Comparison</h2>
 
